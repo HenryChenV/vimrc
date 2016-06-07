@@ -1,6 +1,3 @@
-"author: ruandongdong
-"email: ruandongdong2012@gmail.com
-
 syntax on
 let mapleader = ","
 set encoding=utf-8
@@ -243,3 +240,27 @@ imap <leader>nt <esc>:NERDTreeToggle<cr>
 " EasyMotion
 " ================
 map <leader>a <leader><leader>w
+
+" Enable folding
+"set foldmethod=syntax
+"set foldlevel=99
+" Enable folding with the spacebar
+"nnoremap <space> za
+"nnoremap <c-m> zM
+"nnoremap <c-r> zR
+
+
+"SimpylFold
+"enable previewing of your folded classes' and functions' docstrings in the "fold text
+let g:SimpylFold_docstring_preview = 1
+"see your docstrings folded
+let g:SimpylFold_fold_docstring = 1
+"see your imports folded
+let g:SimpylFold_fold_import = 0
+"In order for SimpylFold to be properly loaded in certain cases
+autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
+autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
+set foldlevel=99
+
+map <space> za
+map F zA
