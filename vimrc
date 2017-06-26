@@ -3,7 +3,8 @@ filetype off
 
 " ==============================================================================
 " " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle
+" install vundle first
+set rtp+=~/.vim/vundle
 
 " ==============================================================================
 " 安装的所有插件
@@ -12,6 +13,9 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+
+" spf13-vim : Steve Francia's Vim Distribution
+" Plugin 'spf13/spf13-vim'
 
 " theme
 Plugin 'tomasr/molokai'
@@ -90,6 +94,17 @@ Plugin 'https://github.com/sekel/vim-vue-syntastic.git'
 " vue syntax high-light
 Plugin 'posva/vim-vue'
 
+" kite
+" Plugin ''
+
+" vnote
+" Plugin 'vimloo'
+" Plugin 'vnote'
+
+" color scheme
+Plugin 'https://github.com/nightsense/vim-crunchbang'
+Plugin 'https://github.com/reewr/vim-monokai-phoenix'
+
 call vundle#end()
 " ==============================================================================
 
@@ -157,6 +172,7 @@ let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
 "colorscheme solarized
 colorscheme molokai
+let g:rehash256 = 1
 
 " Automatic reloading of .vimrc
 " autocmd! bufwritepost .vimrc source %
@@ -427,3 +443,8 @@ let g:mta_filetypes = {
 
 " 光标回到上次关闭时的位置
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+
+" filenames like *.xml, *.html, *.xhtml, ...
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.vue"
+" make the list of non closing tags case sensitive
+let g:closetag_emptyTags_caseSensitive = 1
