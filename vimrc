@@ -105,6 +105,9 @@ Plugin 'posva/vim-vue'
 Plugin 'https://github.com/nightsense/vim-crunchbang'
 Plugin 'https://github.com/reewr/vim-monokai-phoenix'
 
+" Asynchronous syntax highlight engine for Neovim
+" Plugin 'KeitaNakamura/highlighter.nvim'
+
 call vundle#end()
 " ==============================================================================
 
@@ -118,7 +121,7 @@ call vundle#end()
 
 
 syntax on
-let mapleader = ","
+let g:mapleader = ","
 set encoding=utf-8
 set guifont=DejaVu\ Sans\ Mono\ 10
 
@@ -244,6 +247,7 @@ vnoremap > >gv  " better indentation
 
 " Showing line numbers and length
 set number  " show line numbers
+set relativenumber  " show relative line numbers
 set tw=79   " width of document (used by gd)
 "" set nowrap  " don't automatically wrap on load
 "" set fo-=t   " don't automatically wrap text when typing
@@ -320,8 +324,8 @@ let g:pymode_lint_checker="pyflakes,pep8"
 let g:pymode_lint_ignore="N4,E12,E711,E712,E721,E502"
  
 let g:pymode_rope_enable_shortcuts=0
-let pymode_rope_vim_completion=0
-let pymode_rope_extended_complete=0
+let g:pymode_rope_vim_completion=0
+let g:pymode_rope_extended_complete=0
 "let g:pymode_rope_enable_autoimport=0
 let g:pymode_rope_goto_def_newwin="new"
 let g:pymode_rope_guess_project = 1
@@ -331,7 +335,7 @@ let g:pymode_rope = 1
 " =============
 " tagbar
 " =============
-let tagbar_ctags_bin='/usr/local/bin/ctags'
+let g:tagbar_ctags_bin='/usr/local/bin/ctags'
 "let tagbar_width=25
 let g:tagbar_sort = 0
 map <leader>z :TagbarToggle<cr>
@@ -341,9 +345,9 @@ imap <leader>z <esc>:TagbarToggle<cr>
 " =============
 " NerdTree
 " ============
-let Tlist_Use_Right_Window = 1
-let NERDTreeQuitOnOpen = 0
-let NERDTreeIgnore=['.pyc$[[file]]','.gitignore$[[dir]]']
+let g:Tlist_Use_Right_Window = 0
+let g:NERDTreeQuitOnOpen = 0
+let g:NERDTreeIgnore=['.pyc$[[file]]','.gitignore$[[dir]]']
 let g:nerdtree_tabs_open_on_gui_startup = 1
 map <F5> :NERDTreeToggle<cr>
 vmap <F5> <esc>:NERDTreeToggle<cr>
