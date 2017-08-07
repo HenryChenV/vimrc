@@ -108,6 +108,9 @@ Plugin 'https://github.com/reewr/vim-monokai-phoenix'
 " Asynchronous syntax highlight engine for Neovim
 " Plugin 'KeitaNakamura/highlighter.nvim'
 
+" 格式化压缩js，css，html
+Plugin 'maksimr/vim-jsbeautify'
+
 call vundle#end()
 " ==============================================================================
 
@@ -320,7 +323,7 @@ map <c-i> :CtrlPBuffer<CR>
 let g:pymode_rope_goto_definition_bind = "<Leader>g"
 let g:pymode_run = 0
 let g:pymode_folding=0
-let g:pymode_lint_checker="pyflakes,pep8"
+let g:pymode_lint_checker="flake8,pep8"
 let g:pymode_lint_ignore="N4,E12,E711,E712,E721,E502"
  
 let g:pymode_rope_enable_shortcuts=0
@@ -452,3 +455,16 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.vue"
 " make the list of non closing tags case sensitive
 let g:closetag_emptyTags_caseSensitive = 1
+
+" vim-jsbeautify
+" map <c-f> :call JsBeautify()<cr>
+" or
+" autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+" for json
+" autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
+" for jsx
+" autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
+" for html
+" autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+" for css or scss
+" autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
